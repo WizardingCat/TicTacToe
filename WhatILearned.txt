@@ -1,0 +1,11 @@
+if __name__ == "__main__":
+What this does is it makes sure you are running what you want
+If we have a file called xyz.py which contains 2 defined fuctions along with code which prints something out and we want to use this file as a libary  for another program
+We would import it to the new file which is where the problem arises
+When we import the libary ALL the code from it runs meaning if we just import it for the funcions the print statment will also run
+To rectify this we would place the print code in this if __name__ == "__main__": block 
+When you run the libary as a file __name__ would be "__main__" which would allow the code to run
+But if we run the file which uses the libary __name__ would become the name of libary file making the if statment false allowing us to use the function we want without the unintended statments(print) running
+
+To conclued it allow for a more controlled way of using files
+It allows us to run so code if we directly run the file 
