@@ -18,7 +18,7 @@ def checkBoard(board):
         '''returns True if the nth column is a winner'''
         for x in range(1, len(board)):
             if(board[0][n] != board[x][n]):
-                return Falseg
+                return False
         return True
                 
     pass
