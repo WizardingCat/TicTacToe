@@ -18,7 +18,7 @@ def check_column(n):
     return True
             
 
-def checkBoard(board):
+def check_board(board):
     '''returns True if there is a winner''' 
     pass
 
