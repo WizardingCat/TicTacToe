@@ -9,3 +9,12 @@ But if we run the file which uses the libary __name__ would become the name of l
 
 To conclued it allow for a more controlled way of using files
 It allows us to run so code if we directly run the file 
+
+
+When writing a fuction or code in general you want to avoid nested fuctions as they are harder to debug 
+
+When testing make sure to import each function individually so you know what you are testing
+
+
+Learned classes and objects inheritance polymorphism 
+polymorphism is same input diff output

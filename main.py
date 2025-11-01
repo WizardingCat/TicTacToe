@@ -1,26 +1,25 @@
-def printBoard(board):
+def print_board(board):
     '''prints out the board in the terminal'''
     pass
 
+def check_row(n):
+    '''returns True if the nth row is a winner'''
+    for x in range(1, len(board[n]) - 1):
+        if(board[n][0] != board[n][x]):
+            return False        
+    return True
+
+    
+def check_column(n):
+    '''returns True if the nth column is a winner'''
+    for x in range(1, len(board)):
+        if(board[0][n] != board[x][n]):
+            return False
+    return True
+            
 
 def checkBoard(board):
     '''returns True if there is a winner''' 
-
-
-    def checkRow(n):
-        '''returns True if the nth row is a winner'''
-        for x in range(1, len(board[n])):
-            if(board[n][0] != board[n][x]):
-                return False        
-        return True
-    
-    def checkColumn(n):
-        '''returns True if the nth column is a winner'''
-        for x in range(1, len(board)):
-            if(board[0][n] != board[x][n]):
-                return False
-        return True
-                
     pass
 
 
@@ -31,4 +30,5 @@ def main():
         pass
 
 if __name__ == "__main__":
-    main()
+    board = [[1,1,1],[2,2,1],[1,2,3]]
+    checkBoard(board)
