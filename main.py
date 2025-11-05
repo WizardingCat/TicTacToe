@@ -2,7 +2,7 @@ def print_board(board):
     '''prints out the board in the terminal'''
     pass
 
-def check_row(n):
+def check_row(n, board):
     '''returns True if the nth row is a winner'''
     for x in range(1, len(board[n]) - 1):
         if(board[n][0] != board[n][x]):
@@ -10,7 +10,7 @@ def check_row(n):
     return True
 
     
-def check_column(n):
+def check_column(n, board):
     '''returns True if the nth column is a winner'''
     for x in range(1, len(board)):
         if(board[0][n] != board[x][n]):
