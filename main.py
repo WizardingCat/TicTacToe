@@ -4,7 +4,7 @@ def print_board(board):
 
 def check_row(n, board):
     '''returns True if the nth row is a winner'''
-    for x in range(1, len(board[n]) - 1):
+    for x in range(1, len(board[n])):
         if(board[n][0] != board[n][x]):
             return False        
     return True

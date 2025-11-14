@@ -4,15 +4,29 @@ from main import check_row, check_column
 
 class TestTicTacToe(unittest.TestCase): 
     def test_check_row(self):
-        board1 = [[1,2,3],[2,2,2],[2,6,7]]
-        
-        result1 = check_row(0, board1)
+        board1 = [[1,2,3],[2,2,2],[2,1,7]]
 
-        result1 = check_row(1, board1)
-        self.assertTrue(result1)
-        
-        result1 = check_row(2, board1)
+        result1 = check_row(0, board1)
         self.assertFalse(result1)
+
+        result2 = check_row(1, board1)
+        self.assertTrue(result2)
+        
+        result3 = check_row(2, board1)
+        self.assertFalse(result3)
+
+    def test_check_column(self):
+        board1 = [[1,2,3],[2,2,2],[2,2,7]]
+
+        result1 = check_column(0, board1)
+        self.assertFalse(result1)
+
+        result2 = check_column(1, board1)
+        self.assertTrue(result2)
+        
+        result3 = check_column(2, board1)
+        self.assertFalse(result3)
+
 
 if __name__ == "__main__":
     unittest.main()
