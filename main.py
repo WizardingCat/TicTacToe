@@ -5,7 +5,7 @@ def print_board(board):
 def check_row(n, board):
     '''returns True if the nth row is a winner'''
     for x in range(1, len(board[n])):
-        if(board[n][0] != board[n][x]):
+        if (board[n][0] != board[n][x]):
             return False        
     return True
 
@@ -13,7 +13,14 @@ def check_row(n, board):
 def check_column(n, board):
     '''returns True if the nth column is a winner'''
     for x in range(1, len(board)):
-        if(board[0][n] != board[x][n]):
+        if (board[0][n] != board[x][n]):
+            return False
+    return True
+
+def check_right_diag(board):
+    '''returns True if the right diagonal is a winner'''
+    for x in range(1, len(board)):
+        if (board[0][0] != board[x][x]):
             return False
     return True
             
