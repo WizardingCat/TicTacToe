@@ -1,6 +1,6 @@
 import unittest
 
-from main import check_row, check_column
+from main import check_row, check_column, check_left_diag, check_right_diag
 
 class TestTicTacToe(unittest.TestCase): 
     def test_check_row(self):
@@ -27,6 +27,18 @@ class TestTicTacToe(unittest.TestCase):
         result3 = check_column(2, board1)
         self.assertFalse(result3)
 
+    def test_check_right_diag(self):
+        board1 = [[1,2,3],[2,1,2],[2,2,1]]
 
+        result = check_right_diag(board1)
+        self.assertTrue(result)
+    
+    def test_check_left_diag(self):
+        board1 = [[1,2,1],[2,1,2],[1,2,7]]
+
+        result = check_left_diag(board1)
+        self.assertTrue(result)
+
+    
 if __name__ == "__main__":
     unittest.main()
