@@ -1,6 +1,9 @@
 def print_board(board):
     '''prints out the board in the terminal'''
-    pass
+    for row in board:
+        for element in row:
+            print(f"| {element} |", end = "")       
+        print(end = "\n")
 
 def check_row(n, board):
     '''returns True if the nth row is a winner'''
@@ -36,17 +39,22 @@ def check_left_diag(board):
 
 def check_board(board):
     '''returns True if there is a winner''' 
-    pass
+    if(check_left_diag(board) or check_right_diag(board)):
+        return True
+
+    else:
+        for x in range(len(board)):
+            if(check_column(x, board) or check_row(x, board)):
+                return True 
+
+        return False
 
 
 def main():
-    board = [[1, 2, 3],[4, 5, 6],[7, 8 ,9]]
-    while(checkBoard):
-
-        pass
+    print("Welcome to TicTacToe")
 
 if __name__ == "__main__":
     board = [[1,1,1],
              [2,2,1],
              [1,2,3]]
-    checkBoard(board)
+    print_board(board)
