@@ -93,13 +93,28 @@ def main():
         row = []
         row.extend(["-"] * board_size)
         board.append(row)
+        
     print_board(board)
     print("Player 1 (X) will go first")
     curr_player = PLAYER_1
 
     while (not check_board(board)):
-        column = int(input(f"Which column do you want to enter you value player {curr_player} "))
-        row = int(input(f"Which row do you want to enter you value player {curr_player} "))
+        used_spot = True
+        column = None
+        row = None
+        
+        while(used_spot):
+            column = int(input(f"Which column do you want to enter you value player {curr_player} :"))
+            row = int(input(f"Which row do you want to enter you value player {curr_player} :"))
+            print()
+            
+            if(board[row - 1][column - 1] != PLAYER_1 and board[row - 1][column - 1] != PLAYER_2):
+                used_spot = False
+
+            else:
+                print("Invalid position. Please reenter a position")
+
+        print()
         board = place_piece(row, column, board, curr_player)
         print_board(board)
         curr_player = switch_player(curr_player)
