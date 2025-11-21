@@ -3,7 +3,13 @@ PLAYER_2 = "O"
 
 def print_board(board):
     '''prints out the board in the terminal'''
+    num_row = list(range(1, len(board) + 1))
     count = 1
+    print(" ", end = "")
+    for element in num_row:
+        print(f"  {element}  ", end="") 
+    
+    print("")
     for row in board:
         print(count, end="")
         for element in row:
