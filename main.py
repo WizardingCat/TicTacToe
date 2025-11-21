@@ -34,6 +34,7 @@ def check_column(n, board):
     else:
         return False
 
+
 def check_right_diag(board):
     '''returns True if the right diagonal is a winner'''
     if(board[0][0] == PLAYER_1 or board[0][0] == PLAYER_2):
@@ -56,6 +57,7 @@ def check_left_diag(board):
     else:
         return False
 
+
 def check_board(board):
     '''returns True if there is a winner''' 
     if(check_left_diag(board) or check_right_diag(board)):
@@ -67,10 +69,12 @@ def check_board(board):
                 return True 
         return False
 
+
 def place_piece(row, column, board, player):
     '''returns the board with the player in the boards row and column'''
     board[row - 1][column - 1] = player
     return board
+
 
 def switch_player(curr_player):
     '''returns the other player'''
@@ -99,7 +103,6 @@ def main():
         board = place_piece(row, column, board, curr_player)
         print_board(board)
         curr_player = switch_player(curr_player)
-        print(check_board(board))
         
     curr_player = switch_player(curr_player)
     print(f"Congrats {curr_player} you won!")
