@@ -1,3 +1,6 @@
+PLAYER_1 = "X"
+PLAYER_2 = "O"
+
 def print_board(board):
     '''prints out the board in the terminal'''
     count = 1
@@ -53,6 +56,19 @@ def check_board(board):
                 return True 
         return False
 
+def place_piece(row, column, board, player):
+    '''returns the board with the player in the boards row and column'''
+    board[row - 1][column - 1] = player
+    return board
+
+def switch_player(curr_player):
+    '''returns the other player'''
+    if (curr_player == PLAYER_1):
+        return PLAYER_2
+    else:
+        return PLAYER_1
+
+
 
 def main():
     print("Welcome to TicTacToe")
@@ -63,6 +79,18 @@ def main():
         row.extend(["-"] * board_size)
         board.append(row)
     print_board(board)
+    print("Player 1 (X) will go first")
+    curr_player = PLAYER_1
+
+    while (check_board(board)):
+        row = int(input(f"Which row do you want to enter you value player {curr_player}"))
+        column = int(input(f"Which column do you want to enter you value player {curr_player}"))
+        board = place_piece(row, column, board, curr_player)
+        player = switch_player(curr_player)
+    
+        
+        
+
 
 
 if __name__ == "__main__":
