@@ -21,10 +21,11 @@ def print_board(board):
 
 def check_row(n, board):
     '''returns True if the nth row is a winner'''
-    if(board[0][n] == PLAYER_1 or board[0][n] == PLAYER_2):
+    if(board[n][0] == PLAYER_1 or board[n][0] == PLAYER_2):
         for x in range(1, len(board[n])):
             if (board[n][0] != board[n][x]):
-                return False        
+                return False
+        print("row")
         return True
     else:
         return False
@@ -36,22 +37,24 @@ def check_column(n, board):
         for x in range(1, len(board)):
             if (board[0][n] != board[x][n]):
                 return False
+        print("column")
         return True
     else:
         return False
 
 
 def check_right_diag(board):
+
     '''returns True if the right diagonal is a winner'''
     if(board[0][0] == PLAYER_1 or board[0][0] == PLAYER_2):
         for x in range(1, len(board)):
             if (board[0][0] != board[x][x]):
                 return False
+        print("right")
         return True
     else:
         return False
     
-
 
 def check_left_diag(board):
     '''returns True if the left diagonal is a winner'''
@@ -59,6 +62,7 @@ def check_left_diag(board):
         for x in range(len(board)):
             if(board[0][len(board) - 1] != board[x][len(board) - 1 - x]):
                 return False
+        print("left")
         return True
     else:
         return False
@@ -88,7 +92,6 @@ def switch_player(curr_player):
         return PLAYER_2
     else:
         return PLAYER_1
-
 
 
 def main():
@@ -129,10 +132,5 @@ def main():
     print(f"Congrats {curr_player} you won!")
 
     
-        
-        
-
-
-
 if __name__ == "__main__":
     main()
